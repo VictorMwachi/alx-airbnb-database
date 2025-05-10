@@ -21,3 +21,16 @@ pricepernight DECIMAL NOT NULL,
   FOREIGN KEY (host_id) REFERENCES "User"(user_id)
 );
 
+CREATE TABLE Booking(
+booking_id UUID Primary Key,
+property_id UUID,
+user_id UUID,
+start_date DATE NOT NULL,
+end_date DATE NOT NULL,
+total_price DECIMAL NOT NULL,
+status CHECK status in ('pending', 'confirmed', 'canceled') NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY REFERENCES User(user_id),
+FOREIGN KEY REFERENCES Property(property_id)
+);
+
