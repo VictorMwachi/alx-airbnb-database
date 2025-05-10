@@ -6,4 +6,4 @@ Be proficient in using Draw.io or similar tools for visual modeling.
 Possess a good understanding of data normalization principles, particularly up to 3NF.
 Have experience with GitHub repositories for documentation and project submission.
 Follow industry best practices for database design and scripting.
-![image](https://github.com/user-attachments/assets/ef6975ff-df4b-4252-a198-dedf1465c45f)
+![test drawio](https://github.com/user-attachments/assets/ebf011cf-3dee-40e4-8299-4a6358d99a86)
