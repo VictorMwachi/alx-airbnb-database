@@ -42,3 +42,13 @@ payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 payment_method VARCHAR NOT NULL CHECK (payment_method in ('credit_card','paypal', 'stripe')),
     FOREIGN KEY (booking_id) REFERENCES Booking(booking_id)
 )
+
+CREATE TABLE Message(
+message_id UUID Primary Key,
+sender_id,
+recipient_id,
+message_body TEXT NOT NULL,
+sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY(sender_id) REFERENCES User(user_id),
+FOREIGN KEY(recipient_id) REFERENCES User(user_id)
+)
