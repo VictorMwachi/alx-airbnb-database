@@ -1,6 +1,6 @@
-SELECT * FROM Booking book 
+(SELECT * FROM Booking WHERE status = 'confirmed') book 
     INNER JOIN 
-        User guest ON book.user_id = guest.user_id 
+        User guest ON book.user_id = guest.user_id  AND guest.role='guest'
     INNER JOIN 
         Property prty ON book.property_id = prty.property_id 
     INNER JOIN 
