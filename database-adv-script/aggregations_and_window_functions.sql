@@ -1,2 +1,14 @@
-SELECT * FROM User INNER JOIN (SELECT user_id,COUNT(*) FROM Booking GROUP BY user_id) bk_cnt ON User.user_id = bk_cnt.user_id;
-SELECT COUNT(*) OVER(ORDER BY) FROM Booking GROUP user_id
+SELECT user_id, COUNT(*) AS total_bookings FROM Booking GROUP BY user_id ORDER BY total_bookings DESC;
+SELECT 
+    property_id,
+    total_bookings,
+    ROW_NUMBER() OVER (ORDER BY total_bookings DESC) AS booking_rank
+FROM (
+    SELECT 
+        property_id,
+        COUNT(*) AS total_bookings
+    FROM 
+        bookings
+    GROUP BY 
+        property_id
+) AS property_bookings;
